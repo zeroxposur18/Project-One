@@ -68,13 +68,35 @@ function gameFlash(){
     });}
 function one(){
     console.log("ONE WORKS LEGGO");
+    squareOne.style.backgroundColor = 'green';
+    setTimeout(() =>{
+        colorClear()
+    },800)
 };
 function two(){
     console.log("TWO WORKS FUCK YEAH");
+    squareTwo.style.backgroundColor = 'red';   
+    setTimeout(() =>{
+        colorClear()
+    },800) 
 };
 function three(){
     console.log("THREE MUTHAFUKIN WORKS")
+    squareThree.style.backgroundColor = 'yellow';
+    setTimeout(() =>{
+        colorClear()
+    },800)
 };
 function four(){
     console.log("wooo it's functioning");
+    squareFour.style.backgroundColor = 'blue';
+    setTimeout(() =>{
+        colorClear()
+    },800)
+};
+function colorClear() {
+    squareOne.style.backgroundColor = 'darkgreen';
+    squareTwo.style.backgroundColor = 'darkred';
+    squareThree.style.backgroundColor = 'darkgoldenrod';
+    squareFour.style.backgroundColor = 'darkblue';
 };
