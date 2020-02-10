@@ -6,7 +6,7 @@ let gameOver = 0;
 var tempo;
 var isMatch = false;
 
-//Elements
+//Cached Elements
 const squareOne = document.querySelector("#sq1");
 const squareTwo = document.querySelector("#sq2");
 const squareThree = document.querySelector("#sq3");
@@ -21,7 +21,8 @@ squareFour.addEventListener('click', fourClick);
 
 //onclick function
 function btnClick(e){
-    start();
+    if (count === 0)
+        start();
 };
 
 function oneClick(){
@@ -61,6 +62,7 @@ function start(){
     gameRandom()
     gameFlash()
     userTurn();
+    userCheck();
     console.log(gameArray);
 };
 
@@ -111,4 +113,7 @@ function colorClear() {
 };
 function userTurn() {
 
+};
+function userCheck() {
+    
 };
