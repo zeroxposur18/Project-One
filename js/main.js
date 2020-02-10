@@ -1,7 +1,7 @@
 //Variables
 var userArray =[];
 var gameArray =[];
-var count;
+var count = 0;
 let gameOver = 0;
 var tempo;
 var isMatch = false;
@@ -26,7 +26,7 @@ function btnClick(e){
 
 function oneClick(){
     userArray.push(1);
-    squareOne.style.backgroundColor = 'green';
+    squareOne.style.backgroundColor = 'lightgreen';
     setTimeout(() =>{
         colorClear()
     },800)
@@ -60,11 +60,14 @@ function fourClick(){
 function start(){
     gameRandom()
     gameFlash()
+    userTurn();
     console.log(gameArray);
 };
 
 function gameRandom(){
     gameArray.push(Math.floor(Math.random()*4)+ 1);
+    count++;
+    console.log(count);
 };
 
 function gameFlash(){
@@ -77,7 +80,7 @@ function gameFlash(){
         }, (i + 1) * 1000);
     });}
 function one(){
-    squareOne.style.backgroundColor = 'green';
+    squareOne.style.backgroundColor = 'lightgreen';
     setTimeout(() =>{
         colorClear()
     },800)
@@ -105,4 +108,7 @@ function colorClear() {
     squareTwo.style.backgroundColor = 'darkred';
     squareThree.style.backgroundColor = 'darkgoldenrod';
     squareFour.style.backgroundColor = 'darkblue';
+};
+function userTurn() {
+
 };
