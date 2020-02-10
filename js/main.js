@@ -21,28 +21,39 @@ squareFour.addEventListener('click', fourClick);
 
 //onclick function
 function btnClick(e){
-    console.log("Shit button works too");
     start();
 };
 
 function oneClick(){
-    console.log("Shit button one works");
     userArray.push(1);
+    squareOne.style.backgroundColor = 'green';
+    setTimeout(() =>{
+        colorClear()
+    },800)
 };
 
 function twoClick(){
-    console.log("Shit button two works");
     userArray.push(2);
+    squareTwo.style.backgroundColor = 'red';   
+    setTimeout(() =>{
+        colorClear()
+    },800) 
 };
 
 function threeClick(){
-    console.log("Shit button three works");
     userArray.push(3);
+    squareThree.style.backgroundColor = 'yellow';
+    setTimeout(() =>{
+        colorClear()
+    },800)
 };
 
 function fourClick(){
-    console.log("Shit button four works");
     userArray.push(4)
+    squareFour.style.backgroundColor = 'blue';
+    setTimeout(() =>{
+        colorClear()
+    },800)
 };
 
 //Functions
@@ -59,7 +70,6 @@ function gameRandom(){
 function gameFlash(){
     gameArray.forEach((flash, i) =>{
         setTimeout(() => {
-            console.log(flash);
             if (flash === 1) one();
             if (flash === 2) two();
             if (flash === 3) three();
@@ -67,28 +77,24 @@ function gameFlash(){
         }, (i + 1) * 1000);
     });}
 function one(){
-    console.log("ONE WORKS LEGGO");
     squareOne.style.backgroundColor = 'green';
     setTimeout(() =>{
         colorClear()
     },800)
 };
 function two(){
-    console.log("TWO WORKS FUCK YEAH");
     squareTwo.style.backgroundColor = 'red';   
     setTimeout(() =>{
         colorClear()
     },800) 
 };
 function three(){
-    console.log("THREE MUTHAFUKIN WORKS")
     squareThree.style.backgroundColor = 'yellow';
     setTimeout(() =>{
         colorClear()
     },800)
 };
 function four(){
-    console.log("wooo it's functioning");
     squareFour.style.backgroundColor = 'blue';
     setTimeout(() =>{
         colorClear()
