@@ -64,7 +64,7 @@ function gameFlash(){
             if (flash === 2) two();
             if (flash === 3) three();
             if (flash === 4) four();
-        }, i * 1000);
+        }, (i + 1) * 1000);
     });}
 function one(){
     console.log("ONE WORKS LEGGO");
