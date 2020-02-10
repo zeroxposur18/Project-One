@@ -1,8 +1,7 @@
 //Variables
 var userArray =[];
 var gameArray =[];
-var gameCount;
-var userCount;
+var count;
 let gameOver = 0;
 var tempo;
 var isMatch = false;
@@ -49,9 +48,33 @@ function fourClick(){
 //Functions
 function start(){
     gameRandom()
+    gameFlash()
     console.log(gameArray);
 };
 
 function gameRandom(){
     gameArray.push(Math.floor(Math.random()*4)+ 1);
+};
+
+function gameFlash(){
+    gameArray.forEach((flash, i) =>{
+        setTimeout(() => {
+            console.log(flash);
+            if (flash === 1) one();
+            if (flash === 2) two();
+            if (flash === 3) three();
+            if (flash === 4) four();
+        }, i * 1000);
+    });}
+function one(){
+    console.log("ONE WORKS LEGGO");
+};
+function two(){
+    console.log("TWO WORKS FUCK YEAH");
+};
+function three(){
+    console.log("THREE MUTHAFUKIN WORKS")
+};
+function four(){
+    console.log("wooo it's functioning");
 };
