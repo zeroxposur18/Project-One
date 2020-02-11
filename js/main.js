@@ -3,11 +3,9 @@ var userArray = [];
 var gameArray =[];
 var count =0;
 var playerTurn = false;
-var tempo;
 var matchArray;
-var arrayPass;
-var wait;
-var isMatch = false;
+var timeLeft;
+var timer;
 //Cached Elements
 const squareOne = document.querySelector("#sq1");
 const squareTwo = document.querySelector("#sq2");
@@ -56,7 +54,6 @@ function fourClick(){
 function start(){
     gameRandom();
     gameFlash();
-    console.log(gameArray);
 };
 function gameRandom(){
     
@@ -64,6 +61,7 @@ function gameRandom(){
     count++;
 };
 function gameFlash(){
+    document.querySelector('button').innerHTML ='<h1>Computer Turn</h1>';
      gameArray.forEach((flash, i) => {
         setTimeout(() => {
             if (flash === 1)
@@ -113,13 +111,19 @@ function colorClear() {
 };
 function userTurn() {
 playerTurn = true;
+timeLeft = 4;
+timer = setInterval(function(){
+    document.querySelector('button').innerHTML =`<h1> ${timeLeft}   seconds remaining. </h1>`;
+    timeLeft -= 1;
+    if (timeLeft < 0){clearInterval(timer)}
+}, 1000)
 if (playerTurn = true) {setTimeout(() =>{
     if (userArray.length === gameArray.length){
         console.log("");
         clearTimeout();
         userCheck();
     } else gameOver();
-},3000)}
+},5000)}
 };
 function userCheck() {
     playerTurn = false;
@@ -137,9 +141,8 @@ function arrayCheck(){
         matchArray = true;}
         else matchArray = false;
     }}
-
 function gameOver(){
-    console.log("YOU DONE FUCK UP BITCH");
+    document.querySelector('button').innerHTML = '<h1>Game Over! <br> Try Again?</h1>';
     userArray =[];
     gameArray =[];
     count = 0;
