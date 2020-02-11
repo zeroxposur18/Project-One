@@ -128,7 +128,10 @@ function userCheck() {
     arrayCheck();
     if (matchArray === true){
         userArray = [];
-        startAgain();
+        document.querySelector('button').innerHTML = '<h1>Nice job!</h1>';
+        setTimeout(function(){
+            startAgain();
+        }, 2000);
     }
     else gameOver();
 };
