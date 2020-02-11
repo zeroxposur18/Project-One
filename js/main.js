@@ -71,7 +71,6 @@ function gameFlash(){
                 three();
             if (flash === 4)
                 four();
-
         }, (i + 1) * 1000);
     });
 ;setTimeout(function() {
