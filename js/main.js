@@ -128,7 +128,7 @@ function userCheck() {
     arrayCheck();
     if (matchArray === true){
         userArray = [];
-        document.querySelector('button').innerHTML = '<h1>Nice job!</h1>';
+        document.querySelector('button').innerHTML = '<h1>Nice Job!</h1>';
         setTimeout(function(){
             startAgain();
         }, 2000);
