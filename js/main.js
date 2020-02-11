@@ -25,28 +25,28 @@ function btnClick(e){
 function oneClick(){
     userArray.push(1);
     squareOne.style.backgroundColor = 'lightgreen';
-    setTimeout(() =>{
+    setTimeout(function() {
         colorClear()
     },800)
 };
 function twoClick(){
     userArray.push(2);
     squareTwo.style.backgroundColor = 'red';   
-    setTimeout(() =>{
+    setTimeout(function() {
         colorClear()
     },800) 
 };
 function threeClick(){
     userArray.push(3);
     squareThree.style.backgroundColor = 'yellow';
-    setTimeout(() =>{
+    setTimeout(function() {
         colorClear()
     },800)
 };
 function fourClick(){
     userArray.push(4)
     squareFour.style.backgroundColor = 'blue';
-    setTimeout(() =>{
+    setTimeout(function() {
         colorClear()
     },800)
 };
@@ -55,15 +55,14 @@ function start(){
     gameRandom();
     gameFlash();
 };
-function gameRandom(){
-    
+function gameRandom(){  
     gameArray.push(Math.floor(Math.random()*4)+ 1);
     count++;
 };
 function gameFlash(){
     document.querySelector('button').innerHTML ='<h1>Computer Turn</h1>';
      gameArray.forEach((flash, i) => {
-        setTimeout(() => {
+        setTimeout(function() {
             if (flash === 1)
                 one();
             if (flash === 2)
@@ -75,31 +74,31 @@ function gameFlash(){
 
         }, (i + 1) * 1000);
     });
-;setTimeout(() => {
+;setTimeout(function()  {
     userTurn();
 }, (count + 1)*1000);
 }
 function one(){
     squareOne.style.backgroundColor = 'lightgreen';
-    setTimeout(() =>{
+    setTimeout(function() {
         colorClear()
     },800)
 };
 function two(){
     squareTwo.style.backgroundColor = 'red';   
-    setTimeout(() =>{
+    setTimeout(function() {
         colorClear()
     },800) 
-};
+};1
 function three(){
     squareThree.style.backgroundColor = 'yellow';
-    setTimeout(() =>{
+    setTimeout(function() {
         colorClear()
     },800)
 };
 function four(){
     squareFour.style.backgroundColor = 'blue';
-    setTimeout(() =>{
+    setTimeout(function() {
         colorClear()
     },800)
 };
@@ -117,19 +116,16 @@ timer = setInterval(function(){
     timeLeft -= 1;
     if (timeLeft < 0){clearInterval(timer)}
 }, 1000)
-if (playerTurn = true) {setTimeout(() =>{
+if (playerTurn = true) {setTimeout(function() {
     if (userArray.length === gameArray.length){
-        console.log("");
-        clearTimeout();
-        userCheck();
-    } else gameOver();
+        userCheck();}
+    else gameOver();
 },5000)}
 };
 function userCheck() {
     playerTurn = false;
     arrayCheck();
     if (matchArray === true){
-        console.log("CLEAR");
         userArray = [];
         startAgain();
     }
@@ -142,7 +138,7 @@ function arrayCheck(){
         else matchArray = false;
     }}
 function gameOver(){
-    document.querySelector('button').innerHTML = '<h1>Game Over! <br> Try Again?</h1>';
+    document.querySelector('button').innerHTML = `<h1>Game Over! <br>You reached level ${count} <br>Try Again?</h1>`;
     userArray =[];
     gameArray =[];
     count = 0;
