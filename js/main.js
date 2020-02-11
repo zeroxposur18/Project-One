@@ -1,9 +1,12 @@
 //Variables
-var userArray =[];
+var userArray = [];
 var gameArray =[];
-var count = 0;
-let gameOver = 0;
+var count =0;
+var playerTurn = false;
 var tempo;
+var matchArray;
+var arrayPass;
+var wait;
 var isMatch = false;
 //Cached Elements
 const squareOne = document.querySelector("#sq1");
@@ -18,7 +21,7 @@ squareThree.addEventListener('click', threeClick);
 squareFour.addEventListener('click', fourClick);
 //onclick function
 function btnClick(e){
-    // if (count === 0)
+    if (count === 0)
         start();
 };
 function oneClick(){
@@ -54,7 +57,6 @@ function start(){
     gameRandom()
     gameFlash()
     userTurn();
-    userCheck();
     console.log(gameArray);
 };
 function gameRandom(){
@@ -62,13 +64,17 @@ function gameRandom(){
     count++;
     console.log(count);
 };
-function gameFlash(){
-    gameArray.forEach((flash, i) =>{
+async function gameFlash(){
+    arrayPass = gameArray.forEach((flash, i) => {
         setTimeout(() => {
-            if (flash === 1) one();
-            if (flash === 2) two();
-            if (flash === 3) three();
-            if (flash === 4) four();
+            if (flash === 1)
+                one();
+            if (flash === 2)
+                two();
+            if (flash === 3)
+                three();
+            if (flash === 4)
+                four();
         }, (i + 1) * 1000);
     });}
 function one(){
@@ -102,8 +108,42 @@ function colorClear() {
     squareFour.style.backgroundColor = 'darkblue';
 };
 function userTurn() {
-
+wait = arrayPass;
+playerTurn = true;
+if (playerTurn = true) {setTimeout((count) =>{
+    if (userArray.length === gameArray.length){
+        console.log("");
+        clearTimeout();
+        userCheck();
+    } else gameOver();
+}, 5000)}
 };
 function userCheck() {
-    
+    playerTurn = false;
+    arrayCheck();
+    if (matchArray === true){
+        console.log("Nice!");
+        userArray = [];
+        startAgain();
+    }
+    else gameOver();
 };
+function arrayCheck(){
+    for (var i = 0; i < count; i++) {
+        if (userArray[i] === gameArray[i]){
+        matchArray = true;}
+        else matchArray = false;
+    }}
+
+function gameOver(){
+    console.log("YOU DONE FUCK UP BITCH");
+    userArray =[];
+    gameArray =[];
+    count = 0;
+    playerTurn = false;
+};
+function startAgain(){
+    gameRandom();
+    gameFlash();
+    userTurn();
+}
