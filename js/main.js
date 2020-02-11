@@ -74,7 +74,8 @@ function gameFlash(){
 
         }, (i + 1) * 1000);
     });
-;setTimeout(function()  {
+;setTimeout(function() {
+    document.querySelector('button').innerHTML ='<h1>Your Turn!</h1>';
     userTurn();
 }, (count + 1)*1000);
 }
