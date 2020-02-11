@@ -18,7 +18,7 @@ squareThree.addEventListener('click', threeClick);
 squareFour.addEventListener('click', fourClick);
 //onclick function
 function btnClick(e){
-    if (count === 0)
+    // if (count === 0)
         start();
 };
 function oneClick(){
