@@ -5,26 +5,22 @@ var count = 0;
 let gameOver = 0;
 var tempo;
 var isMatch = false;
-
 //Cached Elements
 const squareOne = document.querySelector("#sq1");
 const squareTwo = document.querySelector("#sq2");
 const squareThree = document.querySelector("#sq3");
 const squareFour = document.querySelector("#sq4");
-
 //Event listener set up
 document.querySelector('button').addEventListener('click', btnClick);
 squareOne.addEventListener('click', oneClick);
 squareTwo.addEventListener('click', twoClick);
 squareThree.addEventListener('click', threeClick);
 squareFour.addEventListener('click', fourClick);
-
 //onclick function
 function btnClick(e){
     if (count === 0)
         start();
 };
-
 function oneClick(){
     userArray.push(1);
     squareOne.style.backgroundColor = 'lightgreen';
@@ -32,7 +28,6 @@ function oneClick(){
         colorClear()
     },800)
 };
-
 function twoClick(){
     userArray.push(2);
     squareTwo.style.backgroundColor = 'red';   
@@ -40,7 +35,6 @@ function twoClick(){
         colorClear()
     },800) 
 };
-
 function threeClick(){
     userArray.push(3);
     squareThree.style.backgroundColor = 'yellow';
@@ -48,7 +42,6 @@ function threeClick(){
         colorClear()
     },800)
 };
-
 function fourClick(){
     userArray.push(4)
     squareFour.style.backgroundColor = 'blue';
@@ -56,7 +49,6 @@ function fourClick(){
         colorClear()
     },800)
 };
-
 //Functions
 function start(){
     gameRandom()
@@ -65,13 +57,11 @@ function start(){
     userCheck();
     console.log(gameArray);
 };
-
 function gameRandom(){
     gameArray.push(Math.floor(Math.random()*4)+ 1);
     count++;
     console.log(count);
 };
-
 function gameFlash(){
     gameArray.forEach((flash, i) =>{
         setTimeout(() => {
