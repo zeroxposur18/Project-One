@@ -54,18 +54,17 @@ function fourClick(){
 };
 //Functions
 function start(){
-    gameRandom()
-    gameFlash()
-    userTurn();
+    gameRandom();
+    gameFlash();
     console.log(gameArray);
 };
 function gameRandom(){
+    
     gameArray.push(Math.floor(Math.random()*4)+ 1);
     count++;
-    console.log(count);
 };
-async function gameFlash(){
-    arrayPass = gameArray.forEach((flash, i) => {
+function gameFlash(){
+     gameArray.forEach((flash, i) => {
         setTimeout(() => {
             if (flash === 1)
                 one();
@@ -75,8 +74,13 @@ async function gameFlash(){
                 three();
             if (flash === 4)
                 four();
+
         }, (i + 1) * 1000);
-    });}
+    });
+;setTimeout(() => {
+    userTurn();
+}, (count + 1)*1000);
+}
 function one(){
     squareOne.style.backgroundColor = 'lightgreen';
     setTimeout(() =>{
@@ -108,21 +112,20 @@ function colorClear() {
     squareFour.style.backgroundColor = 'darkblue';
 };
 function userTurn() {
-wait = arrayPass;
 playerTurn = true;
-if (playerTurn = true) {setTimeout((count) =>{
+if (playerTurn = true) {setTimeout(() =>{
     if (userArray.length === gameArray.length){
         console.log("");
         clearTimeout();
         userCheck();
     } else gameOver();
-}, 5000)}
+},3000)}
 };
 function userCheck() {
     playerTurn = false;
     arrayCheck();
     if (matchArray === true){
-        console.log("Nice!");
+        console.log("CLEAR");
         userArray = [];
         startAgain();
     }
@@ -145,5 +148,4 @@ function gameOver(){
 function startAgain(){
     gameRandom();
     gameFlash();
-    userTurn();
 }
