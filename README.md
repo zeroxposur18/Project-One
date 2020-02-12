@@ -10,6 +10,6 @@ This game was originally developed by Ralph H. Baer and Howard J. Morrison as a 
 <h2>Technologies Used</h2>
 <p>This program was built with JavaScript, HTML, CSS and Audacity</p>
 <h2>Getting Started</h2>
-<p> <a heref="https://zeroxposur18.github.io/Simon/" target="_blank">Open Game!</a><br>
-To begin the game, press the Start button!</p>
+<p><a href="https://zeroxposur18.github.io/Simon/" target="_blank">Open game!</a> <br>
+To begin playing this game, Click on the Start button!</p>
 <h2>Next Steps</h2>
