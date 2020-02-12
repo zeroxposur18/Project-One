@@ -29,6 +29,7 @@ function btnClick(e){
 };
 function oneClick(){
     userArray.push(1);
+    audioClear();
     document.getElementById('audio-one').play();
     squareOne.style.backgroundColor = 'lightgreen';
     setTimeout(function() {
@@ -38,6 +39,7 @@ function oneClick(){
 };
 function twoClick(){
     userArray.push(2);
+    audioClear();
     document.getElementById('audio-two').play();
     squareTwo.style.backgroundColor = 'red';   
     setTimeout(function() {
@@ -47,6 +49,7 @@ function twoClick(){
 };
 function threeClick(){
     userArray.push(3);
+    audioClear();
     document.getElementById('audio-three').play();
     squareThree.style.backgroundColor = 'yellow';
     setTimeout(function() {
@@ -56,6 +59,7 @@ function threeClick(){
 };
 function fourClick(){
     userArray.push(4)
+    audioClear();
     document.getElementById('audio-four').play();
     squareFour.style.backgroundColor = 'blue';
     setTimeout(function() {
@@ -78,6 +82,8 @@ function gameRandom(){
     gameTempo();
 };
 function gameFlash(){
+    document.getElementById('audio-one').play();
+    document.getElementById('audio-four').play();
     document.querySelector('button').innerHTML ='<h1>Computer Turn</h1>';
      gameArray.forEach((flash, i) => {
         setTimeout(function() {
@@ -97,6 +103,7 @@ function gameFlash(){
 }, (count + 1)*tempoOne);
 }
 function one(){
+    audioClear();
     document.getElementById('audio-one').play();
     squareOne.style.backgroundColor = 'lightgreen';
     setTimeout(function() {
@@ -105,6 +112,7 @@ function one(){
     },functionTempo)
 };
 function two(){
+    audioClear();
     document.getElementById('audio-two').play();
     squareTwo.style.backgroundColor = 'red';   
     setTimeout(function() {
@@ -113,6 +121,7 @@ function two(){
     },functionTempo) 
 };1
 function three(){
+    audioClear();
     document.getElementById('audio-three').play();
     squareThree.style.backgroundColor = 'yellow';
     setTimeout(function() {
@@ -121,6 +130,7 @@ function three(){
     },functionTempo)
 };
 function four(){
+    audioClear();
     document.getElementById('audio-four').play();
     squareFour.style.backgroundColor = 'blue';
     setTimeout(function() {
@@ -146,6 +156,8 @@ function audioClear(){
 }
 function userTurn() {
 playerTurn = true;
+document.getElementById('audio-two').play();
+document.getElementById('audio-four').play();
 timer = setInterval(function(){
     document.querySelector('button').innerHTML =`<h1> ${timeLeft}   seconds remaining. </h1>`;
     timeLeft -= 1;
@@ -162,8 +174,12 @@ function userCheck() {
     arrayCheck();
     if (matchArray === true){
         userArray = [];
+        document.getElementById('audio-one').play();
+        document.getElementById('audio-two').play();
+        document.getElementById('audio-four').play();
         document.querySelector('button').innerHTML = '<h1>Nice Job!</h1>';
         setTimeout(function(){
+            audioClear();
             startAgain();
         }, 2000);
     }
@@ -212,6 +228,16 @@ function flashTempo(){
     }  
 }
 function gameOver(){
+    document.getElementById('audio-one').play();
+    setTimeout(function(){
+        document.getElementById('audio-four').play();
+    },500);
+    setTimeout(function(){
+        document.getElementById('audio-two').play();
+    },1000);
+    setTimeout(function(){
+        audioClear();
+    },2000);
     document.getElementById('audio-start').pause();
     document.getElementById('audio-start').currentTime = 0;
     document.querySelector('button').innerHTML = `<h1>Game Over! <br>You reached level ${count} <br>Try Again?</h1>`;
