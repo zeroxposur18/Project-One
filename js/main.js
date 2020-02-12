@@ -5,7 +5,6 @@ var count =0;
 var playerTurn = false;
 var matchArray;
 var timeLeft;
-var timeCheck;
 var timer;
 var functionTempo;
 var tempoOne;
