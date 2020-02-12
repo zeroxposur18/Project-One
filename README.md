@@ -13,3 +13,8 @@ This game was originally developed by Ralph H. Baer and Howard J. Morrison as a 
 <p><a href="https://zeroxposur18.github.io/Simon/" target="_blank">Open game!</a> <br>
 To begin playing this game, Click on the Start button!</p>
 <h2>Next Steps</h2>
+1. Circular Application <br>
+2. Application downsized and center <br>
+3. Background image added<br>
+4. Finding and adding original Simon soundfiles<br>
+5. Some form of Animation to the color flash
