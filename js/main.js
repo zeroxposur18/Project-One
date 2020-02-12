@@ -177,16 +177,16 @@ function arrayCheck(){
     }};
 function userTempo(){
     if (count >= 1 && count <4){
+        tempoTwo = 6000;
+        timeLeft = 5;
+    }
+    else if (count >= 4 && count < 8){
         tempoTwo = 5000;
         timeLeft = 4;
     }
-    else if (count >= 4 && count < 8){
+    else if (count >= 8){
         tempoTwo = 4000;
         timeLeft = 3;
-    }
-    else if (count >= 8){
-        tempoTwo = 3000;
-        timeLeft = 2;
     }
 };
 function gameTempo(){
