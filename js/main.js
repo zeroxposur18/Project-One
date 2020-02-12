@@ -20,38 +20,48 @@ squareFour.addEventListener('click', fourClick);
 //onclick function
 function btnClick(e){
     if (count === 0)
+        userArray =[];
         start();
 };
 function oneClick(){
     userArray.push(1);
+    document.getElementById('audio-one').play();
     squareOne.style.backgroundColor = 'lightgreen';
     setTimeout(function() {
-        colorClear()
+        colorClear();
+        audioClear();
     },800)
 };
 function twoClick(){
     userArray.push(2);
+    document.getElementById('audio-two').play();
     squareTwo.style.backgroundColor = 'red';   
     setTimeout(function() {
-        colorClear()
+        colorClear();
+        audioClear();
     },800) 
 };
 function threeClick(){
     userArray.push(3);
+    document.getElementById('audio-three').play();
     squareThree.style.backgroundColor = 'yellow';
     setTimeout(function() {
-        colorClear()
+        colorClear();
+        audioClear();
     },800)
 };
 function fourClick(){
     userArray.push(4)
+    document.getElementById('audio-four').play();
     squareFour.style.backgroundColor = 'blue';
     setTimeout(function() {
-        colorClear()
+        colorClear();
+        audioClear();
     },800)
 };
 //Functions
 function start(){
+    document.getElementById('audio-start').play();
     gameRandom();
     gameFlash();
 };
@@ -79,27 +89,35 @@ function gameFlash(){
 }, (count + 1)*1000);
 }
 function one(){
+    document.getElementById('audio-one').play();
     squareOne.style.backgroundColor = 'lightgreen';
     setTimeout(function() {
-        colorClear()
+        colorClear();
+        audioClear();
     },800)
 };
 function two(){
+    document.getElementById('audio-two').play();
     squareTwo.style.backgroundColor = 'red';   
     setTimeout(function() {
-        colorClear()
+        colorClear();
+        audioClear();
     },800) 
 };1
 function three(){
+    document.getElementById('audio-three').play();
     squareThree.style.backgroundColor = 'yellow';
     setTimeout(function() {
-        colorClear()
+        colorClear();
+        audioClear();
     },800)
 };
 function four(){
+    document.getElementById('audio-four').play();
     squareFour.style.backgroundColor = 'blue';
     setTimeout(function() {
-        colorClear()
+        colorClear();
+        audioClear();
     },800)
 };
 function colorClear() {
@@ -108,6 +126,16 @@ function colorClear() {
     squareThree.style.backgroundColor = 'darkgoldenrod';
     squareFour.style.backgroundColor = 'darkblue';
 };
+function audioClear(){
+    document.getElementById('audio-one').pause();
+    document.getElementById('audio-two').pause();
+    document.getElementById('audio-three').pause();
+    document.getElementById('audio-four').pause();
+    document.getElementById('audio-one').currentTime = 0;
+    document.getElementById('audio-two').currentTime = 0;
+    document.getElementById('audio-three').currentTime = 0;
+    document.getElementById('audio-four').currentTime = 0;
+}
 function userTurn() {
 playerTurn = true;
 timeLeft = 4;
@@ -141,6 +169,8 @@ function arrayCheck(){
         else matchArray = false;
     }}
 function gameOver(){
+    document.getElementById('audio-start').pause();
+    document.getElementById('audio-start').currentTime = 0;
     document.querySelector('button').innerHTML = `<h1>Game Over! <br>You reached level ${count} <br>Try Again?</h1>`;
     userArray =[];
     gameArray =[];
