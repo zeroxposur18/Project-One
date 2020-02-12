@@ -177,7 +177,7 @@ function userCheck() {
         document.getElementById('audio-one').play();
         document.getElementById('audio-two').play();
         document.getElementById('audio-four').play();
-        document.querySelector('button').innerHTML = '<h1>Nice Job!</h1>';
+        document.querySelector('button').innerHTML = `<h1>Nice Job! You completed level ${count}!</h1>`;
         setTimeout(function(){
             audioClear();
             startAgain();
