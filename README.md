@@ -6,7 +6,8 @@ This game was originally developed by Ralph H. Baer and Howard J. Morrison as a 
 <p>Create a browser-based game that models off of the electronic game: Simon</p>
 <h2>Play the Game!</h2>
 <p><a target="_blank" rel="noopener noreferrer" href="https://zeroxposur18.github.io/Simon/"> Open Game!</a><br>
-To begin playing this game, Click on the Start button!</p>
+To begin playing this game, Click on the Start button!<br>
+The computer will flash random colors and you must play the same colors when it is your turn to advance. If you press your color early, take time to relax before the game begins to push you!</p>
 <h2>Prototype View:</h2>
 <img src="img/SimonWireFrame.png">
 <h2>Screenshots</h2>
