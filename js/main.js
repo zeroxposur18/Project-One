@@ -5,7 +5,11 @@ var count =0;
 var playerTurn = false;
 var matchArray;
 var timeLeft;
+var timeCheck;
 var timer;
+var functionTempo;
+var tempoOne;
+var tempoTwo;
 //Cached Elements
 const squareOne = document.querySelector("#sq1");
 const squareTwo = document.querySelector("#sq2");
@@ -61,7 +65,7 @@ function fourClick(){
 };
 //Functions
 function start(){
-    document.getElementById('audio-start').volume = .5;
+    document.getElementById('audio-start').volume = .3;
     document.getElementById('audio-start').play();
     gameRandom();
     gameFlash();
@@ -69,6 +73,9 @@ function start(){
 function gameRandom(){  
     gameArray.push(Math.floor(Math.random()*4)+ 1);
     count++;
+    flashTempo();
+    userTempo();
+    gameTempo();
 };
 function gameFlash(){
     document.querySelector('button').innerHTML ='<h1>Computer Turn</h1>';
@@ -82,12 +89,12 @@ function gameFlash(){
                 three();
             if (flash === 4)
                 four();
-        }, (i + 1) * 1000);
+        }, (i + 1) * tempoOne);
     });
 ;setTimeout(function() {
     document.querySelector('button').innerHTML ='<h1>Your Turn!</h1>';
     userTurn();
-}, (count + 1)*1000);
+}, (count + 1)*tempoOne);
 }
 function one(){
     document.getElementById('audio-one').play();
@@ -95,7 +102,7 @@ function one(){
     setTimeout(function() {
         colorClear();
         audioClear();
-    },800)
+    },functionTempo)
 };
 function two(){
     document.getElementById('audio-two').play();
@@ -103,7 +110,7 @@ function two(){
     setTimeout(function() {
         colorClear();
         audioClear();
-    },800) 
+    },functionTempo) 
 };1
 function three(){
     document.getElementById('audio-three').play();
@@ -111,7 +118,7 @@ function three(){
     setTimeout(function() {
         colorClear();
         audioClear();
-    },800)
+    },functionTempo)
 };
 function four(){
     document.getElementById('audio-four').play();
@@ -119,7 +126,7 @@ function four(){
     setTimeout(function() {
         colorClear();
         audioClear();
-    },800)
+    },functionTempo)
 };
 function colorClear() {
     squareOne.style.backgroundColor = 'darkgreen';
@@ -139,7 +146,6 @@ function audioClear(){
 }
 function userTurn() {
 playerTurn = true;
-timeLeft = 4;
 timer = setInterval(function(){
     document.querySelector('button').innerHTML =`<h1> ${timeLeft}   seconds remaining. </h1>`;
     timeLeft -= 1;
@@ -149,7 +155,7 @@ if (playerTurn = true) {setTimeout(function() {
     if (userArray.length === gameArray.length){
         userCheck();}
     else gameOver();
-},5000)}
+},tempoTwo)}
 };
 function userCheck() {
     playerTurn = false;
@@ -168,7 +174,43 @@ function arrayCheck(){
         if (userArray[i] === gameArray[i]){
         matchArray = true;}
         else matchArray = false;
-    }}
+    }};
+function userTempo(){
+    if (count >= 1 && count <3){
+        tempoTwo = 5000;
+        timeLeft = 4;
+    }
+    else if (count >= 3 && count < 5){
+        tempoTwo = 4000;
+        timeLeft = 3;
+    }
+    else if (count >= 5){
+        tempoTwo = 3000;
+        timeLeft = 2;
+    }
+};
+function gameTempo(){
+    if (count >= 1 && count <3){
+        tempoOne = 1000;
+    }
+    else if (count >= 3 && count < 5){
+        tempoOne = 800;
+    }
+    else if (count >= 5){
+        tempoOne = 700;
+    }
+};
+function flashTempo(){
+    if (count >= 1 && count <3){
+        functionTempo = 800;
+    }
+    else if (count >= 3 && count < 5){
+        functionTempo = 700;
+    }
+    else if (count >= 5){
+        functionTempo = 600;
+    }  
+}
 function gameOver(){
     document.getElementById('audio-start').pause();
     document.getElementById('audio-start').currentTime = 0;
