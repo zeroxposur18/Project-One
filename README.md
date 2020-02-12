@@ -5,7 +5,7 @@ This game was originally developed by Ralph H. Baer and Howard J. Morrison as a 
 <h2>Objective:</h2>
 <p>Create a browser-based game that models off of the electronic game: Simon</p>
 <h2>Play the Game!</h2>
-<p><a href="https://zeroxposur18.github.io/Simon/" target="_blank">Open game!</a> <br>
+<p><a href="https://zeroxposur18.github.io/Simon/" target="_blank"> Open Game!</a><br>
 To begin playing this game, Click on the Start button!</p>
 <h2>Prototype View:</h2>
 <img src="img/SimonWireFrame.png">
