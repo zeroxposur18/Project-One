@@ -67,41 +67,7 @@ function fourClick(){
         audioClear();
     },600)
 };
-//Functions
-function start(){
-    document.getElementById('audio-start').volume = .3;
-    document.getElementById('audio-start').play();
-    gameRandom();
-    gameFlash();
-};
-function gameRandom(){  
-    gameArray.push(Math.floor(Math.random()*4)+ 1);
-    count++;
-    flashTempo();
-    userTempo();
-    gameTempo();
-};
-function gameFlash(){
-    document.getElementById('audio-one').play();
-    document.getElementById('audio-four').play();
-    document.querySelector('button').innerHTML ='<h1>Computer Turn</h1>';
-     gameArray.forEach((flash, i) => {
-        setTimeout(function() {
-            if (flash === 1)
-                one();
-            if (flash === 2)
-                two();
-            if (flash === 3)
-                three();
-            if (flash === 4)
-                four();
-        }, (i + 1) * tempoOne);
-    });
-;setTimeout(function() {
-    document.querySelector('button').innerHTML ='<h1>Your Turn!</h1>';
-    userTurn();
-}, (count + 1)*tempoOne);
-}
+//Function definitions
 function one(){
     audioClear();
     document.getElementById('audio-one').play();
@@ -138,22 +104,40 @@ function four(){
         audioClear();
     },functionTempo)
 };
-function colorClear() {
-    squareOne.style.backgroundColor = 'darkgreen';
-    squareTwo.style.backgroundColor = 'darkred';
-    squareThree.style.backgroundColor = 'darkgoldenrod';
-    squareFour.style.backgroundColor = 'darkblue';
+function start(){
+    document.getElementById('audio-start').volume = .3;
+    document.getElementById('audio-start').play();
+    gameRandom();
+    gameFlash();
 };
-function audioClear(){
-    document.getElementById('audio-one').pause();
-    document.getElementById('audio-two').pause();
-    document.getElementById('audio-three').pause();
-    document.getElementById('audio-four').pause();
-    document.getElementById('audio-one').currentTime = 0;
-    document.getElementById('audio-two').currentTime = 0;
-    document.getElementById('audio-three').currentTime = 0;
-    document.getElementById('audio-four').currentTime = 0;
-}
+function gameRandom(){  
+    gameArray.push(Math.floor(Math.random()*4)+ 1);
+    count++;
+    flashTempo();
+    userTempo();
+    gameTempo();
+};
+function gameFlash(){
+    document.getElementById('audio-one').play();
+    document.getElementById('audio-four').play();
+    document.querySelector('button').innerHTML ='<h1>Computer Turn</h1>';
+     gameArray.forEach((flash, i) => {
+        setTimeout(function() {
+            if (flash === 1)
+                one();
+            if (flash === 2)
+                two();
+            if (flash === 3)
+                three();
+            if (flash === 4)
+                four();
+        }, (i + 1) * tempoOne);
+    });
+;setTimeout(function() {
+    document.querySelector('button').innerHTML ='<h1>Your Turn!</h1>';
+    userTurn();
+}, (count + 1)*tempoOne);
+};
 function userTurn() {
 playerTurn = true;
 document.getElementById('audio-two').play();
@@ -226,7 +210,23 @@ function flashTempo(){
     else if (count >= 8){
         functionTempo = 600;
     }  
-}
+};
+function colorClear() {
+    squareOne.style.backgroundColor = 'darkgreen';
+    squareTwo.style.backgroundColor = 'darkred';
+    squareThree.style.backgroundColor = 'darkgoldenrod';
+    squareFour.style.backgroundColor = 'darkblue';
+};
+function audioClear(){
+    document.getElementById('audio-one').pause();
+    document.getElementById('audio-two').pause();
+    document.getElementById('audio-three').pause();
+    document.getElementById('audio-four').pause();
+    document.getElementById('audio-one').currentTime = 0;
+    document.getElementById('audio-two').currentTime = 0;
+    document.getElementById('audio-three').currentTime = 0;
+    document.getElementById('audio-four').currentTime = 0;
+};
 function gameOver(){
     document.getElementById('audio-one').play();
     setTimeout(function(){
@@ -249,4 +249,4 @@ function gameOver(){
 function startAgain(){
     gameRandom();
     gameFlash();
-}
+};
