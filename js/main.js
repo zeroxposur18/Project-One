@@ -30,7 +30,7 @@ function oneClick(){
     setTimeout(function() {
         colorClear();
         audioClear();
-    },800)
+    },600)
 };
 function twoClick(){
     userArray.push(2);
@@ -39,7 +39,7 @@ function twoClick(){
     setTimeout(function() {
         colorClear();
         audioClear();
-    },800) 
+    },600) 
 };
 function threeClick(){
     userArray.push(3);
@@ -48,7 +48,7 @@ function threeClick(){
     setTimeout(function() {
         colorClear();
         audioClear();
-    },800)
+    },600)
 };
 function fourClick(){
     userArray.push(4)
@@ -57,10 +57,11 @@ function fourClick(){
     setTimeout(function() {
         colorClear();
         audioClear();
-    },800)
+    },600)
 };
 //Functions
 function start(){
+    document.getElementById('audio-start').volume = .5;
     document.getElementById('audio-start').play();
     gameRandom();
     gameFlash();
