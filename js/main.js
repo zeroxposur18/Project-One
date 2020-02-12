@@ -176,38 +176,38 @@ function arrayCheck(){
         else matchArray = false;
     }};
 function userTempo(){
-    if (count >= 1 && count <3){
+    if (count >= 1 && count <4){
         tempoTwo = 5000;
         timeLeft = 4;
     }
-    else if (count >= 3 && count < 5){
+    else if (count >= 4 && count < 8){
         tempoTwo = 4000;
         timeLeft = 3;
     }
-    else if (count >= 5){
+    else if (count >= 8){
         tempoTwo = 3000;
         timeLeft = 2;
     }
 };
 function gameTempo(){
-    if (count >= 1 && count <3){
+    if (count >= 1 && count <4){
         tempoOne = 1000;
     }
-    else if (count >= 3 && count < 5){
+    else if (count >= 4 && count < 8){
         tempoOne = 800;
     }
-    else if (count >= 5){
+    else if (count >= 8){
         tempoOne = 700;
     }
 };
 function flashTempo(){
-    if (count >= 1 && count <3){
+    if (count >= 1 && count <4){
         functionTempo = 800;
     }
-    else if (count >= 3 && count < 5){
+    else if (count >= 4 && count < 8){
         functionTempo = 700;
     }
-    else if (count >= 5){
+    else if (count >= 8){
         functionTempo = 600;
     }  
 }
