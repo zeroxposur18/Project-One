@@ -15,6 +15,8 @@ The computer will flash random colors and you must play the same colors when it 
 <img src="img/SSTwo.png">
 <img src="img/SSThree.png">
 <img src="img/SSFour.png">
+<h2>Pseudo Code</h2>
+<img src="img/Psuedocode.png">
 <h2>Technologies Used</h2>
 <p>This program was built with: </p> 
 - JavaScript <br>
