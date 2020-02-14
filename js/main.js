@@ -25,9 +25,9 @@ squareFour.addEventListener('click', fourClick);
 
 //onclick function
 function btnClick(e){
-    if (count === 0)
+    if (count === 0){
         userArray =[];
-        start();
+        start();}
 };
 
 function oneClick(){
